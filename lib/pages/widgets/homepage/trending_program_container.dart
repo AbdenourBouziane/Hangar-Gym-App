@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/pages/widgets/homepage/sessions_slider.dart';
 
 class TrendingPrograms extends StatelessWidget {
-  const TrendingPrograms({super.key});
+  final String sportTitle;
+  final String classImage;
+  const TrendingPrograms({
+    super.key,
+    required this.sportTitle,
+    required this.classImage,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +19,9 @@ class TrendingPrograms extends StatelessWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
-          image: AssetImage(Assets.images.yogaClass),
-          fit: BoxFit.contain, // Set fit to BoxFit.fill
-          alignment: Alignment.topCenter, // Align to the top
+          image: AssetImage(classImage),
+          fit: BoxFit.contain,
+          alignment: Alignment.topCenter,
         ),
       ),
       child: Padding(
@@ -25,9 +30,9 @@ class TrendingPrograms extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 80),
-            const Text(
-              "Power yoga",
-              style: TextStyle(
+            Text(
+              sportTitle,
+              style: const TextStyle(
                 fontSize: 16,
                 color: AppColors.mainBlue,
                 fontWeight: FontWeight.bold,
