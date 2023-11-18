@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hangar_gym/config/colors.config.dart';
+import 'package:hangar_gym/pages/screens/coaches_page.dart';
+import 'package:hangar_gym/pages/screens/home_page.dart';
+import 'package:hangar_gym/pages/screens/store_page.dart';
 
 class NavigationBottomBar extends StatelessWidget {
-  const NavigationBottomBar({super.key});
+  const NavigationBottomBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +25,30 @@ class NavigationBottomBar extends StatelessWidget {
           children: [
             IconButton(
               icon: const Icon(Icons.home),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
             ),
             IconButton(
               icon: const Icon(Icons.shopping_cart),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const StorePage()),
+                );
+              },
             ),
             IconButton(
               icon: const Icon(Icons.group),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CoachesPage()),
+                );
+              },
             ),
             IconButton(
               icon: const FaIcon(

@@ -14,4 +14,10 @@ class Images {
   String hakimCoach = "assets/images/coaches/arkhobHakim.png";
   String hocineCoach = "assets/images/coaches/hocineDaikhi.png";
   String leenaCoach = "assets/images/coaches/leena.png";
+  String discountTag = "assets/images/stickers/DiscountTag.png";
+  String waterBottle = "assets/images/stickers/bottle.png";
+  String creatine = "assets/images/items/creatine.png";
+  String wheyPack = "assets/images/items/whey.webp";
+  String wheyBottle = "assets/images/items/wheyBottle.png";
+  String wheyConcentrate = "assets/images/items/wheyconcentrate.png";
 }

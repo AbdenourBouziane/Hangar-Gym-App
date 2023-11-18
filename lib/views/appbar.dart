@@ -8,6 +8,7 @@ class HeaderAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      automaticallyImplyLeading: false,
       elevation: 0,
       floating: false,
       pinned: true,
