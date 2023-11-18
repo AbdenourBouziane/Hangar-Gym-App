@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.6.0
-    
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -22,3 +22,4 @@ flutter:
     - assets/images/logos/
     - assets/images/stickers/
     - assets/images/events/
+    - assets/images/coaches/

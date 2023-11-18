@@ -11,4 +11,7 @@ class Images {
   String announce = "assets/images/stickers/Announcement.png";
   String discount = "assets/images/stickers/Discount.png";
   String dumble = "assets/images/stickers/dumble.png";
+  String hakimCoach = "assets/images/coaches/arkhobHakim.png";
+  String hocineCoach = "assets/images/coaches/hocineDaikhi.png";
+  String leenaCoach = "assets/images/coaches/leena.png";
 }

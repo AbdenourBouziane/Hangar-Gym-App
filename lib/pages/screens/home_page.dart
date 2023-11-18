@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/data/classes_info.dart';
 import 'package:hangar_gym/data/events_info.dart';
-import 'package:hangar_gym/pages/widgets/background_screen.dart';
+import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
 import 'package:hangar_gym/pages/widgets/homepage/events_list.dart';
 import 'package:hangar_gym/pages/widgets/homepage/sessions_container.dart';
 import 'package:hangar_gym/pages/widgets/homepage/trending_list.dart';
