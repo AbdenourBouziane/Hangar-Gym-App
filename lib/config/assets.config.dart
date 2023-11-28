@@ -13,5 +13,7 @@ class Images {
   String dumble = "assets/images/stickers/dumble.png";
   String hakimCoach = "assets/images/coaches/arkhobHakim.png";
   String hocineCoach = "assets/images/coaches/hocineDaikhi.png";
-  String leenaCoach = "assets/images/coaches/leena.png";
+String confirmation = "assets/images/logos/confirmation.png";  
+String leenaCoach = "assets/images/coaches/leena.png";
+String blacklogo = "assets/images/logos/logoblack.png";
 }
