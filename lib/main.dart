@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hangar_gym/pages/screens/program_page.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:hangar_gym/pages/screens/home_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,8 +11,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ProgramPage(),
+    return GetMaterialApp(
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

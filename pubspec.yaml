@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.6.0
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:

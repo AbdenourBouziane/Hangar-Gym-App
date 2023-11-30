@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/pages/screens/coaches_page.dart';
 import 'package:hangar_gym/pages/screens/home_page.dart';
+import 'package:hangar_gym/pages/screens/program_page.dart';
 import 'package:hangar_gym/pages/screens/store_page.dart';
 
 class NavigationBottomBar extends StatelessWidget {
@@ -28,7 +29,7 @@ class NavigationBottomBar extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
             ),
@@ -54,7 +55,12 @@ class NavigationBottomBar extends StatelessWidget {
               icon: const FaIcon(
                 FontAwesomeIcons.dumbbell,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProgramPage()),
+                );
+              },
             ),
           ],
         ),

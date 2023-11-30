@@ -20,4 +20,5 @@ class Images {
   String wheyPack = "assets/images/items/whey.webp";
   String wheyBottle = "assets/images/items/wheyBottle.png";
   String wheyConcentrate = "assets/images/items/wheyconcentrate.png";
+  String profilePicture = "assets/images/items/profile.jpg";
 }
