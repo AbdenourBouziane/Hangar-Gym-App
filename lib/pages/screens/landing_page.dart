@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
+import 'package:hangar_gym/controllers/navigation_controller.dart';
 import 'package:hangar_gym/pages/screens/home_page.dart';
-import 'package:hangar_gym/pages/screens/info_page.dart';
-import 'package:hangar_gym/pages/screens/login_page.dart';
+import 'package:hangar_gym/pages/screens/registration/login_page.dart';
 import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({Key? key}) : super(key: key);
+  const LandingPage({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -15,6 +16,8 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  final NavigationController navigationController =
+      Get.put(NavigationController());
   double logoTopPosition = 200;
 
   @override
@@ -58,11 +61,7 @@ class _LandingPageState extends State<LandingPage> {
                     const SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const InfoPage()),
-                        );
+                        navigationController.navigateToHomePage();
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.mainBlue,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
-import 'package:hangar_gym/pages/screens/info_page.dart';
 import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
 import 'package:hangar_gym/pages/widgets/profile/access_info_container.widget.dart';
 
@@ -13,6 +12,18 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          title: Image.asset(
+            Assets.images.frameLogo,
+            height: 50,
+          ),
+          centerTitle: true,
+          iconTheme: const IconThemeData(
+            color: AppColors.white,
+          ),
+          backgroundColor: AppColors.mainBlue,
+        ),
         body: GradienBackground(
           child: SingleChildScrollView(
             child: Padding(
@@ -20,29 +31,7 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const InfoPage()),
-                          );
-                        },
-                        icon: const FaIcon(
-                          Icons.arrow_back,
-                          color: AppColors.white,
-                        ),
-                      ),
-                      Image.asset(
-                        Assets.images.frameLogo,
-                        height: 50,
-                      ),
-                      const SizedBox(width: 40),
-                    ],
-                  ),
+                  const SizedBox(width: 40),
                   const SizedBox(height: 60),
                   Center(
                     child: Stack(
@@ -80,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const InfoAccess(
+                  InfoAccess(
                     height: 150,
                     text1: "Edit profile information",
                     text2: "Notifications",
@@ -90,7 +79,7 @@ class ProfilePage extends StatelessWidget {
                     icon3: Icons.language,
                   ),
                   const SizedBox(height: 20),
-                  const InfoAccess(
+                  InfoAccess(
                     height: 100,
                     text1: "Security",
                     text2: "Theme",
@@ -98,7 +87,7 @@ class ProfilePage extends StatelessWidget {
                     icon2: FontAwesomeIcons.image,
                   ),
                   const SizedBox(height: 20),
-                  const InfoAccess(
+                  InfoAccess(
                     height: 150,
                     text1: "Help & Support",
                     text2: "Contact us",

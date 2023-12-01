@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hangar_gym/config/colors.config.dart';
-import 'package:hangar_gym/pages/screens/signup_page.dart';
+import 'package:hangar_gym/pages/screens/registration/signup_page.dart';
 import 'package:hangar_gym/pages/widgets/login&signup/text_field_decoration.wifget.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -73,6 +73,9 @@ class _LoginPageState extends State<LoginPage> {
                   color: AppColors.mainGrey,
                 ),
               ),
+              const SizedBox(
+                width: 10,
+              ),
               GestureDetector(
                 onTap: () => _showDrawer(context, 'Sign Up'),
                 child: const Text(
@@ -91,6 +94,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _showDrawer(BuildContext context, String title) {
+    Navigator.pop(context); // Close the current drawer (Login)
+
     showModalBottomSheet<void>(
       context: context,
       backgroundColor: Colors.transparent,

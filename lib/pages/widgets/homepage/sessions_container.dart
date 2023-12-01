@@ -12,8 +12,8 @@ class SessionsContainer extends StatelessWidget {
       height: 150,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [AppColors.white, AppColors.gradientPurple],
         ),
         borderRadius: BorderRadius.circular(20),

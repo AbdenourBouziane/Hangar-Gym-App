@@ -4,14 +4,26 @@ import 'package:get/get.dart';
 import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/controllers/bottom_bar_controller.dart';
-import 'package:hangar_gym/pages/screens/coaches_page.dart';
-import 'package:hangar_gym/pages/screens/info_page.dart';
-import 'package:hangar_gym/pages/screens/program_page.dart';
-import 'package:hangar_gym/pages/screens/store_page.dart';
+import 'package:hangar_gym/controllers/navigation_controller.dart';
+import 'package:hangar_gym/controllers/program_page_controller.dart';
+import 'package:hangar_gym/views/all_programs_page.dart';
+import 'package:hangar_gym/pages/screens/classes_page.dart';
+import 'package:hangar_gym/views/coaches_page.dart';
+import 'package:hangar_gym/views/info_page.dart';
+import 'package:hangar_gym/views/program_page.dart';
+import 'package:hangar_gym/views/specific_program_page.dart';
+import 'package:hangar_gym/views/store_page.dart';
 
 class HomePage extends StatelessWidget {
   final BottomBarController bottomBarController =
       Get.put(BottomBarController());
+
+  final ProgramPageController programPageController =
+      Get.put(ProgramPageController());
+
+  final NavigationController navigationController =
+      Get.put(NavigationController());
+
   HomePage({super.key});
 
   @override
@@ -23,14 +35,16 @@ class HomePage extends StatelessWidget {
         title: Center(
           child: Image.asset(
             Assets.images.frameLogo,
-            height: 42,
-            width: 94,
+            height: 47,
+            width: 99,
           ),
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.person),
-            onPressed: () {},
+            onPressed: () {
+              navigationController.navigateToProfilePage();
+            },
           ),
         ],
       ),
@@ -41,11 +55,29 @@ class HomePage extends StatelessWidget {
         onPageChanged: (index) {
           bottomBarController.pageChangedViaSliding(index);
         },
-        children: const [
-          InfoPage(),
-          StorePage(),
-          CoachesPage(),
-          ProgramPage(),
+        children: [
+          Obx(
+            () {
+              if (programPageController.isClassClicked.value) {
+                return ClassesPage();
+              } else {
+                return InfoPage();
+              }
+            },
+          ),
+          const StorePage(),
+          const CoachesPage(),
+          Obx(
+            () {
+              if (programPageController.isSeeAllClicked.value) {
+                return AllPrograms();
+              } else if (programPageController.isSeeMoreClicked.value) {
+                return SpecificProgram();
+              } else {
+                return ProgramPage();
+              }
+            },
+          ),
         ],
       ),
     );

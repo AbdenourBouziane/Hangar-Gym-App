@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   font_awesome_flutter: ^10.6.0
   get: ^4.6.6
+  intl_phone_number_input: ^0.7.3+1
 
 dev_dependencies:
   flutter_test:
@@ -24,4 +25,11 @@ flutter:
     - assets/images/stickers/
     - assets/images/events/
     - assets/images/coaches/
+    - assets/images/exercises/
     - assets/images/items/
+    - assets/images/backgrounds/
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Regular.ttf

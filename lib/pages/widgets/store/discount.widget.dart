@@ -3,17 +3,25 @@ import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 
 class Discounts extends StatelessWidget {
-  const Discounts({super.key});
+  final Color color1;
+  final Color color2;
+  final String text;
+  const Discounts({
+    super.key,
+    required this.color1,
+    required this.color2,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 150,
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [AppColors.white, AppColors.blueGradient],
+          colors: [color1, color2],
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -26,13 +34,14 @@ class Discounts extends StatelessWidget {
               Image.asset(Assets.images.waterBottle),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             width: 150,
             child: Text(
-              "10 % Discount on all products",
-              style: TextStyle(
+              text,
+              style: const TextStyle(
                 fontSize: 24,
                 color: AppColors.white,
+                fontFamily: 'Lato',
               ),
               textAlign: TextAlign.center,
             ),

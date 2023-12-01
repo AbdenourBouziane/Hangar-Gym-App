@@ -7,5 +7,5 @@ class AppColors {
   static const Color blueSecondary = Color(0xFF313150);
   static const Color gradientPurple = Color(0xff2B1738);
   static const Color mainGrey = Color(0xffD9D9D9);
-  static const Color blueGradient = Color(0x081D3C);
+  static const Color blueGradient = Color(0xff081D3C);
 }

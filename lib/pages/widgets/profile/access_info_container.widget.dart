@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:hangar_gym/config/colors.config.dart';
+import 'package:hangar_gym/controllers/navigation_controller.dart';
 
 class InfoAccess extends StatelessWidget {
-  const InfoAccess({
+  final NavigationController navigationController =
+      Get.put(NavigationController());
+  InfoAccess({
     Key? key,
     required this.text1,
     required this.text2,
@@ -41,11 +45,16 @@ class InfoAccess extends StatelessWidget {
               children: [
                 FaIcon(icon1),
                 const SizedBox(width: 10),
-                Text(
-                  text1,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
+                InkWell(
+                  onTap: () {
+                    navigationController.navigateToEditProfilePage();
+                  },
+                  child: Text(
+                    text1,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],
