@@ -16,4 +16,7 @@ class Images {
 String confirmation = "assets/images/logos/confirmation.png";  
 String leenaCoach = "assets/images/coaches/leena.png";
 String blacklogo = "assets/images/logos/logoblack.png";
+String gymwriting = "assets/images/background/gym.png";
+String bottomwriting = "assets/images/background/yoursecondhome.png";
+String background= "assets/images/background/backgroundimage.png";
 }

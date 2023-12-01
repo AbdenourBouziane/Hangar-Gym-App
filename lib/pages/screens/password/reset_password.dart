@@ -43,35 +43,45 @@ class ResetPassword extends StatelessWidget {
               height: 30,
             ),
             const InputFieldContainer(textLabel: "Confirm password"),
-            const SizedBox( height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             FilledButton(
               onPressed: () {
                 // Handle button press
               },
               style: FilledButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 255, 255, 255)
-
-              ),
+                  backgroundColor: Color.fromARGB(255, 255, 255, 255)),
               child: Container(
-                width: double.infinity,
-             
+                height: 100,
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  
-                  gradient: LinearGradient(
-                    colors: [AppColors.mainBlue,AppColors.mainRed],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
+                  gradient: const LinearGradient(
+                    colors: [
+                      AppColors.mainBlue,
+                      AppColors.mainRed,
+                    ], // Adjust colors as needed
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(
+                      20.0), // Adjust the radius as needed
                 ),
-                child: Center(
-                  child: Text(
-                    'Reset Password',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add your button click logic here
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    elevation: 0, // Remove the default button elevation
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          20.0), // Adjust the radius as needed
                     ),
+                  ),
+                  child: const Text(
+                    'Click me',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
