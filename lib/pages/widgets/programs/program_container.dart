@@ -22,7 +22,7 @@ class ProgramContainer extends StatelessWidget {
             children: [
               // Background Image
               Image.asset(
-                Assets.images.gymClass,
+                Assets.images.man,
                 fit: BoxFit.cover,
               ),
 
@@ -30,10 +30,10 @@ class ProgramContainer extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
+                    begin: Alignment.centerRight,
+                    end: Alignment.centerLeft,
                     colors: [
-                      Colors.transparent,
+                      Color.fromARGB(150, 12, 12, 12),
                       Color.fromARGB(150, 12, 12, 12),
                     ],
                   ),
