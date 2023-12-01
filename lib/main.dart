@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hangar_gym/pages/screens/coaches_page.dart';
+import 'package:hangar_gym/pages/screens/editProfile_page.dart';
 import 'package:hangar_gym/pages/screens/home_page.dart';
-
-void main() {
+import 'package:hangar_gym/pages/screens/program_page.dart';
+import 'package:hangar_gym/pages/screens/editProfile_page.dart';
+import 'pages/screens/allPrograms_page.dart';
+ main() {
   runApp(const MainApp());
 }
 
@@ -11,8 +13,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: CoachesPage(),
+    return  MaterialApp(
+      routes: {
+        '/home': (context) => HomePage(),
+      },
+      home: AllPrograms(),
       debugShowCheckedModeBanner: false,
     );
   }
