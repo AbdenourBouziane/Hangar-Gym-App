@@ -61,18 +61,12 @@ class InfoPage extends StatelessWidget {
                       fontFamily: 'Lato',
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      controller.isClassClicked();
-                      print(controller.isClassClicked.value);
-                    },
-                    child: Text(
-                      "See More",
-                      style: TextStyle(
-                        color: AppColors.white.withOpacity(0.5),
-                        fontSize: 12,
-                        fontFamily: 'Lato',
-                      ),
+                  Text(
+                    "See More",
+                    style: TextStyle(
+                      color: AppColors.white.withOpacity(0.5),
+                      fontSize: 12,
+                      fontFamily: 'Lato',
                     ),
                   ),
                 ],
