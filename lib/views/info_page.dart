@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/controllers/program_page_controller.dart';
 import 'package:hangar_gym/data/classes_info.dart';
-import 'package:hangar_gym/data/events_info.dart';
 import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
 import 'package:hangar_gym/pages/widgets/homepage/events_list.dart';
 import 'package:hangar_gym/pages/widgets/homepage/sessions_container.dart';
@@ -35,9 +34,7 @@ class InfoPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              EventList(
-                eventData: eventData,
-              ),
+              EventList(),
               const SizedBox(height: 20),
               const Text(
                 "Personal goal this week",
