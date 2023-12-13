@@ -25,7 +25,8 @@ class DbHelper {
     String path = join(await getDatabasesPath(), 'app_database.db');
 
     // Open the database
-    Database db = await openDatabase(path, version: 1, onCreate: (db, version) async {
+    Database db =
+        await openDatabase(path, version: 1, onCreate: (db, version) async {
       await _createEventsTable(db);
       await _createStoreItemsTable(db);
     });

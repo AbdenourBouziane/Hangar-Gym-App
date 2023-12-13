@@ -1,6 +1,6 @@
 import 'package:hangar_gym/backend/db_helper.dart';
-import 'package:hangar_gym/data/store_items.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:hangar_gym/data/store_items.dart';
 
 class DbItems {
   final DbHelper dbHelper = DbHelper();

@@ -36,7 +36,7 @@ class _LandingPageState extends State<LandingScreen>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 2),
     );
 
     _controller.addStatusListener((status) {
@@ -90,7 +90,7 @@ class _LandingPageState extends State<LandingScreen>
       ),
     );
 
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 1), () {
       _controller.forward();
     });
   }

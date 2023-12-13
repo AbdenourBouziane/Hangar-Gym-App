@@ -13,18 +13,28 @@ class SearchBarStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: searchController,
-      onChanged: updateDisplayedItems,
-      decoration: const InputDecoration(
-        border: InputBorder.none,
-        labelText: 'Search for items',
-        labelStyle: TextStyle(
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
           color: AppColors.white,
+          width: 1,
         ),
-        prefixIcon: Icon(
-          Icons.search,
-          color: AppColors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextField(
+        style: const TextStyle(color: AppColors.white),
+        controller: searchController,
+        onChanged: updateDisplayedItems,
+        decoration: const InputDecoration(
+          border: InputBorder.none,
+          labelText: 'Search for items',
+          labelStyle: TextStyle(
+            color: AppColors.white,
+          ),
+          prefixIcon: Icon(
+            Icons.search,
+            color: AppColors.white,
+          ),
         ),
       ),
     );

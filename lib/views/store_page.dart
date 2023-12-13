@@ -6,7 +6,7 @@ import 'package:hangar_gym/pages/widgets/store/items_list.widget.dart';
 import 'package:hangar_gym/pages/widgets/store/search_bar.widget.dart';
 
 class StorePage extends StatefulWidget {
-  const StorePage({Key? key}) : super(key: key);
+  const StorePage({super.key});
 
   @override
   // ignore: library_private_types_in_public_api

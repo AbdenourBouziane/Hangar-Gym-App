@@ -19,12 +19,10 @@ class ItemsList extends StatelessWidget {
         } else {
           List<Map<String, dynamic>> storeItems = snapshot.data!;
 
-          // Check if store items are not yet inserted and insert them
           if (storeItems.isEmpty) {
             DbItems().insertStoreItems();
           }
 
-          // Filter items based on search query
           List<Map<String, dynamic>> displayedItems = storeItems
               .where((item) => item['itemName']
                   .toString()
