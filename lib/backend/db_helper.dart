@@ -1,4 +1,3 @@
-// db_helper.dart
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -24,11 +23,11 @@ class DbHelper {
   Future<Database> initDatabase() async {
     String path = join(await getDatabasesPath(), 'app_database.db');
 
-    // Open the database
     Database db =
         await openDatabase(path, version: 1, onCreate: (db, version) async {
       await _createEventsTable(db);
       await _createStoreItemsTable(db);
+      await _createCoachesTable(db);
     });
 
     return db;
@@ -51,6 +50,17 @@ class DbHelper {
         itemName TEXT,
         itemImage TEXT,
         itemPrice TEXT
+      )
+    ''');
+  }
+
+  Future<void> _createCoachesTable(Database db) async {
+    await db.execute('''
+      CREATE TABLE coaches(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        coachName TEXT,
+        coachImage TEXT,
+        coachProfession TEXT
       )
     ''');
   }

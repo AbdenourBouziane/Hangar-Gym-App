@@ -4,7 +4,7 @@ import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/controllers/program_page_controller.dart';
 import 'package:hangar_gym/data/classes_info.dart';
 import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
-import 'package:hangar_gym/pages/widgets/homepage/events_list.dart';
+import 'package:hangar_gym/pages/widgets/events/events_list.dart';
 import 'package:hangar_gym/pages/widgets/homepage/sessions_container.dart';
 import 'package:hangar_gym/pages/widgets/homepage/trending_list.dart';
 import 'package:hangar_gym/pages/widgets/store/discount.widget.dart';
@@ -24,6 +24,11 @@ class InfoPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Discounts(
+                text: "30 % Discount on all programs",
+                color1: AppColors.white,
+                color2: AppColors.mainRed,
+              ),
               const SizedBox(height: 30),
               const Text(
                 "Our Monthly Events",
@@ -34,7 +39,7 @@ class InfoPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              EventList(),
+              const EventList(),
               const SizedBox(height: 20),
               const Text(
                 "Personal goal this week",
@@ -73,11 +78,6 @@ class InfoPage extends StatelessWidget {
                 classesData: classesData,
               ),
               const SizedBox(height: 20),
-              const Discounts(
-                text: "30 % Discount on all programs",
-                color1: AppColors.white,
-                color2: AppColors.mainRed,
-              ),
             ],
           ),
         ),

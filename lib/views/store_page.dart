@@ -54,7 +54,6 @@ class _StorePageState extends State<StorePage> {
                 ),
               ),
               const SizedBox(height: 20),
-              // Use the SearchBarStore widget
               ItemsList(searchQuery: _searchQuery),
               const SizedBox(height: 20),
               const Text(
@@ -66,8 +65,7 @@ class _StorePageState extends State<StorePage> {
                 ),
               ),
               const SizedBox(height: 20),
-              // Use a separate instance of ItemsList for best offers
-              const ItemsList(searchQuery: ''),
+              ItemsList(searchQuery: _searchQuery),
             ],
           ),
         ),

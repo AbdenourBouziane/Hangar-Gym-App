@@ -21,7 +21,7 @@ class _LandingPageState extends State<LandingScreen>
   late Animation<double> _logoAnimation;
   late Animation<double> _textAnimation;
   late Animation<double> _bottomImageAnimation;
-  late AnimationController _logoMoveController; // New controller
+  late AnimationController _logoMoveController;
   late Animation<double> _logoMoveAnimation;
   late AnimationController _buttonsController;
   late Animation<double> _buttonsAnimation;
@@ -36,7 +36,7 @@ class _LandingPageState extends State<LandingScreen>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(milliseconds: 600),
     );
 
     _controller.addStatusListener((status) {
@@ -68,7 +68,7 @@ class _LandingPageState extends State<LandingScreen>
 
     _logoMoveController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 500),
     );
 
     _logoMoveAnimation = Tween<double>(begin: 0, end: -250).animate(
@@ -80,7 +80,7 @@ class _LandingPageState extends State<LandingScreen>
 
     _buttonsController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 500),
     );
 
     _buttonsAnimation = Tween<double>(begin: 0, end: 1).animate(
@@ -90,7 +90,7 @@ class _LandingPageState extends State<LandingScreen>
       ),
     );
 
-    Timer(const Duration(seconds: 1), () {
+    Timer(const Duration(milliseconds: 500), () {
       _controller.forward();
     });
   }
@@ -98,7 +98,7 @@ class _LandingPageState extends State<LandingScreen>
   void _startLogoMoveAnimation() {
     _logoMoveController.forward().then((_) {
       // Add a delay before showing the buttons
-      Timer(const Duration(seconds: 1), () {
+      Timer(const Duration(milliseconds: 500), () {
         _buttonsController.forward();
         setState(() {
           _buttonsVisible = true;

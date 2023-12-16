@@ -9,9 +9,9 @@ class Images {
   String gymClass = "assets/images/events/classgym.png";
   String classgym = "assets/images/events/class.png";
   String classgymBig = "assets/images/events/ClassBig.png";
-
   String yogaClass = "assets/images/events/classyoga.png";
   String manTrain = "assets/images/events/manTraining.png";
+  String unsplash = "assets/images/events/unsplash.png";
   String announce = "assets/images/stickers/Announcement.png";
   String discount = "assets/images/stickers/Discount.png";
   String confirmation = "assets/images/stickers/confirmation.png";

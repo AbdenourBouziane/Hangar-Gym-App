@@ -32,18 +32,21 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.mainBlue,
-        title: Center(
-          child: Image.asset(
-            Assets.images.frameLogo,
-            height: 47,
-            width: 99,
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Image.asset(
+              Assets.images.frameLogo,
+              height: 47,
+              width: 99,
+            ),
           ),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.person),
+            icon: const Icon(Icons.qr_code),
             onPressed: () {
-              navigationController.navigateToProfilePage();
+              navigationController.naviagteToQrCodePage();
             },
           ),
         ],
@@ -85,6 +88,7 @@ class HomePage extends StatelessWidget {
 
   Widget _buildDrawer() {
     return Drawer(
+      backgroundColor: AppColors.mainBlue,
       child: Column(
         children: [
           UserAccountsDrawerHeader(
@@ -97,7 +101,12 @@ class HomePage extends StatelessWidget {
               color: AppColors.mainRed,
             ),
           ),
-          _buildListTile(Icons.person, 'Profile'),
+          GestureDetector(
+            onTap: () {
+              navigationController.navigateToProfilePage();
+            },
+            child: _buildListTile(Icons.person, 'Profile'),
+          ),
           _buildListTile(Icons.message, 'Message'),
           _buildListTile(Icons.report, 'Report'),
           _buildListTile(Icons.settings, 'Settings'),
@@ -111,8 +120,16 @@ class HomePage extends StatelessWidget {
 
   Widget _buildListTile(IconData icon, String title) {
     return ListTile(
-      leading: Icon(icon),
-      title: Text(title),
+      leading: Icon(
+        icon,
+        color: AppColors.white,
+      ),
+      title: Text(
+        title,
+        style: const TextStyle(
+          color: AppColors.white,
+        ),
+      ),
     );
   }
 

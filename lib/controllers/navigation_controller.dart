@@ -12,4 +12,8 @@ class NavigationController extends GetxController {
   void navigateToEditProfilePage() {
     Get.toNamed('/editProfile');
   }
+
+  void naviagteToQrCodePage() {
+    Get.toNamed('/qrcode');
+  }
 }
