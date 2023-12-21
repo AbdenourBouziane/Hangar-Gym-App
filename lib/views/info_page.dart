@@ -39,7 +39,7 @@ class InfoPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const EventList(),
+              EventList(),
               const SizedBox(height: 20),
               const Text(
                 "Personal goal this week",

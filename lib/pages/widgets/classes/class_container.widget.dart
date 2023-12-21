@@ -13,7 +13,7 @@ class ClassContainer extends StatelessWidget {
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: Container(
+        child: SizedBox(
           height: 150,
           child: Stack(
             fit: StackFit.expand,

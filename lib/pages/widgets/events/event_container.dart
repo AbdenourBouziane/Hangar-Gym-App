@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hangar_gym/config/colors.config.dart';
+import 'package:hangar_gym/controllers/program_page_controller.dart';
 
 class EventContainer extends StatelessWidget {
-  const EventContainer(
-      {super.key, required this.eventName, required this.eventImage});
+  EventContainer(
+      {super.key,
+      required this.eventName,
+      required this.eventImage,
+      required this.eventId});
 
+  final ProgramPageController controller = Get.put(ProgramPageController());
+
+  final int eventId;
   final String eventName;
   final String eventImage;
 
@@ -20,7 +28,13 @@ class EventContainer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset(eventImage),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.network(
+              eventImage,
+              width: 100,
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +68,9 @@ class EventContainer extends StatelessWidget {
             ],
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.onDetailsClick(eventId);
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(AppColors.mainBlue),
             ),
