@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hangar_gym/backend/events/db_events.dart';
+import 'package:hangar_gym/controllers/program_page_controller.dart';
 import 'package:hangar_gym/pages/widgets/events/event_container.dart';
 import 'package:hangar_gym/pages/widgets/events/events_shimmer.widget.dart';
 
 class EventList extends StatelessWidget {
-  const EventList({super.key});
+  EventList({super.key});
+  final ProgramPageController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +42,14 @@ class EventList extends StatelessWidget {
               children: List<Widget>.generate(
                 eventData.length,
                 (index) {
+                  final eventId = eventData[index]["id"];
                   final eventName = eventData[index]["eventsName"];
                   final eventImage = eventData[index]["eventsImage"];
 
                   return Row(
                     children: [
                       EventContainer(
+                        eventId: eventId,
                         eventName: eventName,
                         eventImage: eventImage,
                       ),

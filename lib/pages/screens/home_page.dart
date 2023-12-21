@@ -9,6 +9,7 @@ import 'package:hangar_gym/controllers/program_page_controller.dart';
 import 'package:hangar_gym/views/all_programs_page.dart';
 import 'package:hangar_gym/pages/screens/classes_page.dart';
 import 'package:hangar_gym/views/coaches_page.dart';
+import 'package:hangar_gym/views/events_details_page.dart';
 import 'package:hangar_gym/views/info_page.dart';
 import 'package:hangar_gym/views/program_page.dart';
 import 'package:hangar_gym/views/specific_program_page.dart';
@@ -63,6 +64,8 @@ class HomePage extends StatelessWidget {
             () {
               if (programPageController.isClassClicked.value) {
                 return ClassesPage();
+              } else if (programPageController.isDetailsClicked.value) {
+                return EventsDetailsPage();
               } else {
                 return InfoPage();
               }
