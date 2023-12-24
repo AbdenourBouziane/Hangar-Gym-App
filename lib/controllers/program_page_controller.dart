@@ -6,6 +6,7 @@ class ProgramPageController extends GetxController {
   RxBool isClassClicked = false.obs;
   RxBool isDetailsClicked = false.obs;
   RxInt selectedEventId = RxInt(0);
+  RxBool isSeeAllEventsClicked = false.obs;
 
   void onSeeAllClicked() {
     isSeeAllClicked.value = true;
@@ -40,5 +41,13 @@ class ProgramPageController extends GetxController {
 
   void resetDetailsClick() {
     isDetailsClicked.value = false;
+  }
+
+  void onSeeAllEventsClickes() {
+    isSeeAllEventsClicked.value = true;
+  }
+
+  void resetSeeAllEvents() {
+    isSeeAllEventsClicked.value = false;
   }
 }

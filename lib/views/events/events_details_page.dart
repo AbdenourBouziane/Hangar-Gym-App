@@ -1,36 +1,56 @@
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/controllers/program_page_controller.dart';
 import 'package:hangar_gym/backend/events/db_events.dart';
 import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
+import 'package:hangar_gym/pages/widgets/events/checkout_social_media.widget.dart';
 import 'package:hangar_gym/pages/widgets/events/detaild_events_shimmer.widget.dart';
 
 class EventsDetailsPage extends StatelessWidget {
-  EventsDetailsPage({Key? key}) : super(key: key);
+  EventsDetailsPage({super.key});
 
   final ProgramPageController controller = Get.find();
+
+  Future<List<Map<String, dynamic>>> _fetchEventData() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult == ConnectivityResult.none) {
+      throw Exception('No internet connection');
+    }
+
+    return DbEvents().getEventsFromApi();
+  }
+
+  Widget _buildErrorWidget(BuildContext context) {
+    return const GradienBackground(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Check your internet connection and try again.',
+              style: TextStyle(color: Colors.red),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final int selectedEventId = controller.selectedEventId.value;
 
     return FutureBuilder<List<Map<String, dynamic>>>(
-      future: DbEvents().getEventsFromApi(),
+      future: _fetchEventData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const GradienBackground(
             child: ShimmerEventDetailedContainer(),
           );
         } else if (snapshot.hasError) {
-          return GradienBackground(
-            child: Center(
-              child: Text(
-                "Error fetching event details: ${snapshot.error}",
-                style: const TextStyle(color: AppColors.white),
-              ),
-            ),
-          );
+          return _buildErrorWidget(context);
         } else {
           List<Map<String, dynamic>> eventData = snapshot.data!;
 
@@ -60,6 +80,7 @@ class EventsDetailsPage extends StatelessWidget {
                     selectedEvent["eventsImage"] as String? ?? "",
                   ),
                   const SizedBox(height: 10),
+                  const CheckoutSocialMedia(),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Text(

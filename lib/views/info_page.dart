@@ -30,13 +30,31 @@ class InfoPage extends StatelessWidget {
                 color2: AppColors.mainRed,
               ),
               const SizedBox(height: 30),
-              const Text(
-                "Our Monthly Events",
-                style: TextStyle(
-                  color: AppColors.white,
-                  fontSize: 18,
-                  fontFamily: 'Lato',
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Our Monthly Events",
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: 18,
+                      fontFamily: 'Lato',
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      controller.onSeeAllEventsClickes();
+                    },
+                    child: const Text(
+                      "See All",
+                      style: TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 12,
+                        color: AppColors.mainGrey,
+                      ),
+                    ),
+                  )
+                ],
               ),
               const SizedBox(height: 20),
               EventList(),

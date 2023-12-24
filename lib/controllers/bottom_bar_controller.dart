@@ -21,6 +21,7 @@ class BottomBarController extends GetxController {
     } else if (index == 0) {
       Get.find<ProgramPageController>().resetClassClickes();
       Get.find<ProgramPageController>().resetDetailsClick();
+      Get.find<ProgramPageController>().resetSeeAllEvents();
     }
   }
 
