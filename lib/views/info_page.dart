@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/controllers/program_page_controller.dart';
-import 'package:hangar_gym/data/classes_info.dart';
 import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
 import 'package:hangar_gym/pages/widgets/events/events_list.dart';
-import 'package:hangar_gym/pages/widgets/homepage/sessions_container.dart';
-import 'package:hangar_gym/pages/widgets/homepage/trending_list.dart';
+import 'package:hangar_gym/pages/widgets/infopage/sessions_container.dart';
+import 'package:hangar_gym/pages/widgets/classes/class_list.dart';
 import 'package:hangar_gym/pages/widgets/store/discount.widget.dart';
 
 class InfoPage extends StatelessWidget {
@@ -74,7 +73,7 @@ class InfoPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "Trending Programs",
+                    "Classes",
                     style: TextStyle(
                       color: AppColors.white,
                       fontSize: 18,
@@ -92,9 +91,7 @@ class InfoPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              TrendingList(
-                classesData: classesData,
-              ),
+              ClassLists(),
               const SizedBox(height: 20),
             ],
           ),

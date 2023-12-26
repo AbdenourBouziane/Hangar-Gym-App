@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
-import 'package:hangar_gym/pages/widgets/homepage/sessions_slider.dart';
+import 'package:hangar_gym/pages/widgets/infopage/sessions_slider.dart';
 
 class SessionsContainer extends StatelessWidget {
   const SessionsContainer({super.key});

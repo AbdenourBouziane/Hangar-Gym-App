@@ -1,4 +1,4 @@
-import 'package:connectivity/connectivity.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hangar_gym/config/colors.config.dart';
@@ -9,32 +9,9 @@ import 'package:hangar_gym/pages/widgets/events/all_events_container.widget.dart
 import 'package:hangar_gym/pages/widgets/events/all_events_shimmer.widget.dart';
 
 class AllEventsPage extends StatelessWidget {
-  AllEventsPage({Key? key}) : super(key: key);
+  AllEventsPage({super.key});
 
   final ProgramPageController controller = Get.find();
-
-  Future<List<Map<String, dynamic>>> _fetchEventData() async {
-    var connectivityResult = await (Connectivity().checkConnectivity());
-    if (connectivityResult == ConnectivityResult.none) {
-      throw Exception('No internet connection');
-    }
-
-    return DbEvents().getEventsFromApi();
-  }
-
-  Widget _buildErrorWidget(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Check your internet connection and try again.',
-            style: TextStyle(color: Colors.red),
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +33,7 @@ class AllEventsPage extends StatelessWidget {
           ),
           Expanded(
             child: FutureBuilder<List<Map<String, dynamic>>>(
-              future: _fetchEventData(),
+              future: DbEvents().getEventsFromApi(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const SingleChildScrollView(
@@ -77,18 +54,17 @@ class AllEventsPage extends StatelessWidget {
                     ),
                   );
                 } else if (snapshot.hasError) {
-                  return _buildErrorWidget(context);
+                  if (kDebugMode) {
+                    print(snapshot.error);
+                  }
+                  return const Center(
+                    child: Text(
+                      "Failed to get all events",
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  );
                 } else {
                   List<Map<String, dynamic>> eventData = snapshot.data!;
-
-                  if (eventData.isEmpty) {
-                    return const Center(
-                      child: Text(
-                        'No events available.',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    );
-                  }
 
                   return ListView.builder(
                     itemCount: eventData.length,

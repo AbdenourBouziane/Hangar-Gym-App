@@ -18,13 +18,10 @@ class ClassContainer extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              // Background Image
               Image.asset(
                 backgroundImage,
                 fit: BoxFit.cover,
               ),
-
-              // Gradient Overlay
               Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
@@ -37,8 +34,6 @@ class ClassContainer extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // Content
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: Stack(
@@ -50,7 +45,6 @@ class ClassContainer extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Add your text fields here
                           Text(
                             'Your Text Here',
                             style: TextStyle(
