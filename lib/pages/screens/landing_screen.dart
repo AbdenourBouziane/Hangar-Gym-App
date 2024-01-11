@@ -5,14 +5,14 @@ import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/controllers/navigation_controller.dart';
 import 'package:hangar_gym/pages/screens/home_page.dart';
-import 'package:hangar_gym/pages/screens/registration/login_page.dart';
 
 class LandingScreen extends StatefulWidget {
-  const LandingScreen({Key? key}) : super(key: key);
+  final NavigationController navigationController =
+      Get.put(NavigationController());
+  LandingScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _LandingPageState createState() => _LandingPageState();
+  State<LandingScreen> createState() => _LandingPageState();
 }
 
 class _LandingPageState extends State<LandingScreen>
@@ -97,7 +97,6 @@ class _LandingPageState extends State<LandingScreen>
 
   void _startLogoMoveAnimation() {
     _logoMoveController.forward().then((_) {
-      // Add a delay before showing the buttons
       Timer(const Duration(milliseconds: 500), () {
         _buttonsController.forward();
         setState(() {
@@ -176,7 +175,9 @@ class _LandingPageState extends State<LandingScreen>
                   FadeTransition(
                     opacity: _buttonsAnimation,
                     child: ElevatedButton(
-                      onPressed: () => _showDrawer(context, 'Login'),
+                      onPressed: () {
+                        navigationController.naviagteToLoginPage();
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.white,
                         shape: RoundedRectangleBorder(
@@ -198,7 +199,11 @@ class _LandingPageState extends State<LandingScreen>
                     opacity: _buttonsAnimation,
                     child: ElevatedButton(
                       onPressed: () {
-                        navigationController.navigateToHomePage();
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                          (route) => false,
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.mainBlue,
@@ -229,15 +234,5 @@ class _LandingPageState extends State<LandingScreen>
     _logoMoveController.dispose();
     _buttonsController.dispose();
     super.dispose();
-  }
-
-  void _showDrawer(BuildContext context, String title) {
-    showModalBottomSheet<void>(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (BuildContext context) {
-        return title == 'Login' ? const LoginPage() : HomePage();
-      },
-    );
   }
 }

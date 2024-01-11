@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "524732542029",
+    "project_id": "hangar-gym",
+    "storage_bucket": "hangar-gym.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524732542029:android:5c0a7cb023bbca3c9f4004",
+        "android_client_info": {
+          "package_name": "com.example.hangar_gym"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM8eYm7b7AattRUPzH6hmJZBL9q_eQNW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

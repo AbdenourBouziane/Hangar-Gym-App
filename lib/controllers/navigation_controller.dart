@@ -16,4 +16,12 @@ class NavigationController extends GetxController {
   void naviagteToQrCodePage() {
     Get.toNamed('/qrcode');
   }
+
+  void naviagteToLoginPage() {
+    Get.toNamed('/loginPage');
+  }
+
+  void naviagteToSignUpPage() {
+    Get.toNamed('/signupPage');
+  }
 }

@@ -4,6 +4,7 @@ import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/pages/widgets/background/background_screen.dart';
 import 'package:hangar_gym/pages/widgets/profile/access_info_container.widget.dart';
+import 'package:hangar_gym/utils/constant.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -105,7 +106,11 @@ class ProfilePage extends StatelessWidget {
                         backgroundColor:
                             MaterialStatePropertyAll(AppColors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () async {
+                        await client.auth.signOut();
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/landingPage', (route) => false);
+                      },
                       child: const Text(
                         "Logout",
                         style: TextStyle(

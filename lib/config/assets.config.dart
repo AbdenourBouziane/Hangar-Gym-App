@@ -4,7 +4,7 @@ class Assets {
 
 class Images {
   String whiteLogo = "assets/images/logos/whiteLogo.png";
-  String blackLogo = "assets/images/logos/logobalck.png";
+  String blackLogo = "assets/images/logos/blacklogo.png";
   String frameLogo = "assets/images/logos/frameLogo.png";
   String gymClass = "assets/images/events/classgym.png";
   String classgym = "assets/images/events/class.png";
