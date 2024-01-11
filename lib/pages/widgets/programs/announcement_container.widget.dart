@@ -27,6 +27,7 @@ class Announcement extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 color: AppColors.white,
+                fontFamily: 'Lato',
               ),
               textAlign: TextAlign.center,
             ),

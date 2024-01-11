@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 
 class PlansContainer extends StatelessWidget {
@@ -8,118 +7,97 @@ class PlansContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        bottomLeft: Radius.circular(20),
-        bottomRight: Radius.circular(20),
-      ),
+      borderRadius: BorderRadius.circular(20),
       child: Container(
-        height: 270,
+        width: 270,
         decoration: const BoxDecoration(
           color: AppColors.white,
         ),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(50),
+                bottomRight: Radius.circular(50),
+              ),
               child: Container(
-                height: 100,
+                height: 90.0,
+                width: 270,
                 decoration: const BoxDecoration(
                   color: AppColors.mainBlue,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(50),
-                    bottomRight: Radius.circular(50),
-                  ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Standard Plan",
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 22,
-                        ),
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Standard Plan',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                        fontFamily: 'Lato',
                       ),
-                      Text(
-                        "8000 DA / Monthly",
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      '6000 Dz/Month',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.0,
+                        fontFamily: 'Lato',
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            const Positioned.fill(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.check,
-                        color: Colors.green,
-                      ),
-                      SizedBox(width: 20),
-                      Text(
-                        "Unlimited club access",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.check,
-                        color: Colors.green,
-                      ),
-                      SizedBox(width: 20),
-                      Text(
-                        "Unlimited club access",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.check,
-                        color: Colors.green,
-                      ),
-                      SizedBox(width: 20),
-                      Text(
-                        "Unlimited club access",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+            Container(
+              height: 120.0,
+              width: 270,
+              decoration: const BoxDecoration(
+                color: AppColors.white,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    buildListItem('Unlimited Club Access', true),
+                    buildListItem('Group Attendance', true),
+                    buildListItem('Visits to the Bath Complex', true),
+                  ],
+                ),
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget buildListItem(String text, bool isChecked) {
+    return Row(
+      children: [
+        isChecked
+            ? const Icon(
+                Icons.check,
+                color: Colors.green,
+              )
+            : const Icon(
+                Icons.check_box_outline_blank,
+                color: Colors.black,
+              ),
+        const SizedBox(width: 8.0),
+        Text(
+          text,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 14.0,
+            fontFamily: 'Lato',
+          ),
+        ),
+      ],
     );
   }
 }
