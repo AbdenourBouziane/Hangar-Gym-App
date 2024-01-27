@@ -8,7 +8,7 @@ import 'package:hangar_gym/pages/widgets/programs/program_container.dart';
 class AllPrograms extends StatelessWidget {
   final ProgramPageController controller = Get.find();
 
-  AllPrograms({Key? key}) : super(key: key);
+  AllPrograms({super.key});
 
   @override
   Widget build(BuildContext context) {

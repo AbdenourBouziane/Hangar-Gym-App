@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:hangar_gym/config/assets.config.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 import 'package:hangar_gym/controllers/navigation_controller.dart';
-import 'package:hangar_gym/pages/screens/home_page.dart';
+import 'package:hangar_gym/pages/screens/home/home_page.dart';
 
 class LandingScreen extends StatefulWidget {
   final NavigationController navigationController =

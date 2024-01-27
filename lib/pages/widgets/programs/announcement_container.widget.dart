@@ -23,10 +23,10 @@ class Announcement extends StatelessWidget {
           const SizedBox(
             width: 250,
             child: Text(
-              "For updates concerning work timing",
+              "Check out our new plans",
               style: TextStyle(
                 fontSize: 24,
-                color: AppColors.white,
+                color: AppColors.gradientPurple,
                 fontFamily: 'Lato',
               ),
               textAlign: TextAlign.center,

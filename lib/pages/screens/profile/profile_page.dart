@@ -108,6 +108,7 @@ class ProfilePage extends StatelessWidget {
                       ),
                       onPressed: () async {
                         await client.auth.signOut();
+                        // ignore: use_build_context_synchronously
                         Navigator.pushNamedAndRemoveUntil(
                             context, '/landingPage', (route) => false);
                       },

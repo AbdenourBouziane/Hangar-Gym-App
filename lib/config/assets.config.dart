@@ -32,7 +32,12 @@ class Images {
   String class4 = "assets/images/exercises/class4.png";
   String class5 = "assets/images/exercises/class5.png";
   String class6 = "assets/images/exercises/class6.png";
+  String barbellSquat = "assets/images/exercises/barbellsquat.jpg";
+  String calves = "assets/images/exercises/claf.jpg";
+  String legPress = "assets/images/exercises/legpress.jpg";
+  String lunges = "assets/images/exercises/lunges.jpg";
   String gymwriting = "assets/images/backgrounds/gym.png";
   String bottomwriting = "assets/images/backgrounds/yoursecondhome.png";
   String background = "assets/images/backgrounds/backgroundimage.png";
+  String location = "assets/images/backgrounds/location.PNG";
 }

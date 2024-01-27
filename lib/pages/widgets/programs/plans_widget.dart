@@ -2,7 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:hangar_gym/config/colors.config.dart';
 
 class PlansContainer extends StatelessWidget {
-  const PlansContainer({super.key});
+  const PlansContainer({
+    super.key,
+    required this.subscriptiontitle,
+    required this.timing,
+    required this.monthly,
+    required this.trimestriel,
+    required this.semestriel,
+    required this.annually,
+  });
+
+  final String subscriptiontitle;
+  final String timing;
+  final String monthly;
+  final String trimestriel;
+  final String semestriel;
+  final String annually;
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +42,22 @@ class PlansContainer extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: AppColors.mainBlue,
                 ),
-                child: const Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Standard Plan',
-                      style: TextStyle(
+                      subscriptiontitle,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 20.0,
                         fontFamily: 'Lato',
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Text(
-                      '6000 Dz/Month',
-                      style: TextStyle(
+                      timing,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 14.0,
                         fontFamily: 'Lato',
@@ -63,9 +78,10 @@ class PlansContainer extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildListItem('Unlimited Club Access', true),
-                    buildListItem('Group Attendance', true),
-                    buildListItem('Visits to the Bath Complex', true),
+                    buildListItem(monthly, true),
+                    buildListItem(trimestriel, true),
+                    buildListItem(semestriel, true),
+                    buildListItem(annually, true),
                   ],
                 ),
               ),

@@ -9,8 +9,7 @@ class StorePage extends StatefulWidget {
   const StorePage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _StorePageState createState() => _StorePageState();
+  State<StorePage> createState() => _StorePageState();
 }
 
 class _StorePageState extends State<StorePage> {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:hangar_gym/pages/screens/home_page.dart';
-import 'package:hangar_gym/pages/screens/landing_screen.dart';
+import 'package:hangar_gym/pages/screens/home/home_page.dart';
+import 'package:hangar_gym/pages/screens/home/landing_screen.dart';
 import 'package:hangar_gym/routes/app_routes.dart';
 import 'package:hangar_gym/utils/constant.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';

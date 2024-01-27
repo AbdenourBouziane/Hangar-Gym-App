@@ -48,6 +48,7 @@ class ClassLists extends StatelessWidget {
                   final classImage = classesData[index]["classImage"] ?? "";
                   final classLevel = classesData[index]["classLevel"] ?? "";
                   final classTime = classesData[index]["classTime"] ?? "";
+                  final classDay = classesData[index]["classDay"] ?? "";
                   return Row(
                     children: [
                       Class(
@@ -55,6 +56,7 @@ class ClassLists extends StatelessWidget {
                         classImage: classImage,
                         classLevel: classLevel,
                         classTime: classTime,
+                        classDay: classDay,
                       ),
                       const SizedBox(width: 10),
                     ],

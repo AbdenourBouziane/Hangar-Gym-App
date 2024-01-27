@@ -59,7 +59,7 @@ class InfoPage extends StatelessWidget {
               EventList(),
               const SizedBox(height: 20),
               const Text(
-                "Personal goal this week",
+                "Find our location",
                 style: TextStyle(
                   color: AppColors.white,
                   fontSize: 18,
@@ -80,12 +80,17 @@ class InfoPage extends StatelessWidget {
                       fontFamily: 'Lato',
                     ),
                   ),
-                  Text(
-                    "See More",
-                    style: TextStyle(
-                      color: AppColors.white.withOpacity(0.5),
-                      fontSize: 12,
-                      fontFamily: 'Lato',
+                  InkWell(
+                    onTap: () {
+                      controller.onclassClicked();
+                    },
+                    child: Text(
+                      "See All",
+                      style: TextStyle(
+                        color: AppColors.white.withOpacity(0.5),
+                        fontSize: 12,
+                        fontFamily: 'Lato',
+                      ),
                     ),
                   ),
                 ],

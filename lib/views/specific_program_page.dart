@@ -59,7 +59,7 @@ class SpecificProgram extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Wide Grip Barbell curl',
+                                    'Legs Program',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
@@ -126,7 +126,7 @@ class SpecificProgram extends StatelessWidget {
                 ),
               ),
               ExercisesList(
-                exercises: exercises,
+                exercises: legExercises,
               ),
             ],
           ),

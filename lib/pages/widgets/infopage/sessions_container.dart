@@ -1,57 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:hangar_gym/config/assets.config.dart';
-import 'package:hangar_gym/config/colors.config.dart';
-import 'package:hangar_gym/pages/widgets/infopage/sessions_slider.dart';
+import 'package:path/path.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SessionsContainer extends StatelessWidget {
   const SessionsContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [AppColors.white, AppColors.gradientPurple],
-        ),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Sessions",
-                      style: TextStyle(
-                          fontSize: 24,
-                          color: AppColors.mainBlue,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      "4 completed",
-                    )
-                  ],
-                ),
-                Image.asset(Assets.images.dumble),
-              ],
+    return InkWell(
+      onTap: () {
+        launchUrl(
+          url.toUri(
+              'https://l.facebook.com/l.php?u=https%3A%2F%2Fmaps.app.goo.gl%2FUKEiiTCQeK7kHRFr5%3Fg_st%3Dic%26fbclid%3DIwAR34CNle4RCAwKke6G1cGGCvjYV4UuEq90yZWR9lwERmWW_hQL3k7h6A99E&h=AT0YnLhZnqvZ_EkScBxJnjX6bZoOeYRgWlqdq9FN1zG4BByvmsr9YU2nKXcfp9TaUQp1kv4-v-6v5HmAlwAH4qZvezRElg8TOazVglZ5Xvnk_Xva99x9awCQO5MCnn32IbDX9A'),
+        );
+      },
+      child: Container(
+        height: 150,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(
+              Assets.images.location,
             ),
-            StaticSlider(
-              value: 2, // Set your initial value
-              divisions: 6, // Set the number of divisions or steps
-              onChanged: (value) {},
-              activeColor: AppColors.white,
-              inactiveColor: AppColors.white,
-            ),
-          ],
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
