@@ -10,8 +10,8 @@ class GradienBackground extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [AppColors.mainBlue, AppColors.mainRed],
         ),
       ),

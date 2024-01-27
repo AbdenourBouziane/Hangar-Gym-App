@@ -19,7 +19,7 @@ class ItemContainer extends StatelessWidget {
       width: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: AppColors.white,
+        color: AppColors.blueSecondary,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,17 +33,19 @@ class ItemContainer extends StatelessWidget {
           Text(
             itemName,
             style: const TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
+              fontFamily: 'Lato',
             ),
           ),
           const SizedBox(height: 10),
           Text(
             itemPrice,
             style: const TextStyle(
-              color: Colors.black54,
+              color: Colors.white,
               fontSize: 18,
+              fontFamily: 'Lato',
             ),
           ),
           const SizedBox(height: 10),

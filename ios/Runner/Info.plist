@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>hangar_gym</string>
+	<string>Hangar Gym</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -45,5 +45,16 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleURLTypes</key>
+ 	<array>
+    	<dict>
+      		<key>CFBundleTypeRole</key>
+      		<string>Editor</string>
+      		<key>CFBundleURLSchemes</key>
+      		<array>
+        		<string>io.supabase.flutterquickstart</string>
+      		</array>
+    	</dict>
+  	</array>
 </dict>
 </plist>

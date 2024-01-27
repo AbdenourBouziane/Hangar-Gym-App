@@ -45,6 +45,7 @@ class CoachProfile extends StatelessWidget {
               color: Colors.black,
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              fontFamily: 'Lato',
             ),
           ),
           const SizedBox(height: 10),
@@ -53,6 +54,7 @@ class CoachProfile extends StatelessWidget {
             style: const TextStyle(
               color: Colors.black54,
               fontSize: 20,
+              fontFamily: 'Lato',
             ),
           ),
           const SizedBox(height: 10),

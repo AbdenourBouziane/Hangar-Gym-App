@@ -7,14 +7,32 @@ environment:
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
+  carousel_slider: ^4.2.1
+  connectivity: ^3.0.6
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.6.0
+  get: ^4.6.6
+  http: ^1.1.0
+  intl_phone_number_input: ^0.7.3+1
+  path: ^1.8.3
+  qr_flutter: ^4.1.0
+  shimmer: ^3.0.0
+  sqflite: ^2.3.0
+  supabase_flutter: ^2.2.0
+  url_launcher: ^6.2.2
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logos/logoblack.png"
 
 flutter:
   uses-material-design: true
@@ -23,4 +41,11 @@ flutter:
     - assets/images/stickers/
     - assets/images/events/
     - assets/images/coaches/
+    - assets/images/exercises/
     - assets/images/items/
+    - assets/images/backgrounds/
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Regular.ttf
