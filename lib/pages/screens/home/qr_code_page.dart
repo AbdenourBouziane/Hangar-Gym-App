@@ -96,7 +96,7 @@ class _QRcodePageState extends State<QRcodePage> {
 
   Widget _buildLoginButton() {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
@@ -125,7 +125,7 @@ class _QRcodePageState extends State<QRcodePage> {
         ),
         const SizedBox(height: 50),
         const Text(
-          'Coming soon',
+          'Coming soon...',
           style: TextStyle(
             fontSize: 20,
             fontFamily: 'Lato',
